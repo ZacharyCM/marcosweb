@@ -16,6 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Data Layer** - Sanity schemas, GROQ queries, TypeScript types, and embedded Studio route
 - [x] **Phase 3: Auth Gate** - Registration, login, approval flow, middleware — fully hardened before any menu UI
 - [ ] **Phase 4: Product Display** - Netflix-style carousels, product cards, detail modal, dark theme, legal compliance
+- [ ] **Phase 5: Bug Fixing and Polishing for Deployment** - Production environment hardening, Vercel env var fixes, Sanity CORS verification, full E2E smoke test on live URL before client handover
 
 ## Phase Details
 
@@ -86,10 +87,20 @@ Plans:
 - [x] 04-02-PLAN.md — Menu page RSC with parallel strain fetches, StrainCarousel CSS scroll-snap component, ProductCard with image/name/badge/price/THC/CBD
 - [ ] 04-03-PLAN.md — ProductModal with native dialog + media gallery, wire into ProductCard click handler, API route for full product detail, human verify E2E
 
+### Phase 5: Bug Fixing and Polishing for Deployment
+**Goal**: Every user-facing flow works correctly on the live Vercel production URL — auth, Studio, menu, and modal — and the site is ready for client handover
+**Depends on:** Phase 4
+**Requirements**: AUTH-01, AUTH-02, AUTH-03, AUTH-04, AUTH-05, AUTH-06, PROD-01, PROD-02, PROD-03, PROD-04, MENU-01, MENU-02, MENU-03, MENU-04, MENU-05, MENU-06, LEGAL-01, LEGAL-02, LEGAL-03, INFRA-01, INFRA-02
+**Plans:** 2 plans
+
+Plans:
+- [ ] 05-01-PLAN.md — Add AUTH_URL to .env.local, update REQUIREMENTS.md, human: set Vercel env vars (AUTH_SECRET, AUTH_URL, SANITY_WRITE_TOKEN), verify Sanity CORS
+- [ ] 05-02-PLAN.md — Full E2E smoke test on live Vercel production URL covering all 5 user flows
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -97,13 +108,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 2. Data Layer | 2/2 | Complete | 2026-03-02 |
 | 3. Auth Gate | 4/4 | Complete | 2026-03-02 |
 | 4. Product Display | 2/3 | In progress | - |
-
-### Phase 5: bug fixing and polishing for deployment
-
-**Goal:** [To be planned]
-**Requirements**: TBD
-**Depends on:** Phase 4
-**Plans:** 0 plans
-
-Plans:
-- [ ] TBD (run /gsd:plan-phase 5 to break down)
+| 5. Bug Fixing & Deployment | 0/2 | Planned | - |
