@@ -1,6 +1,8 @@
 "use client"
+import { useState } from "react"
 import Image from "next/image"
 import type { PRODUCTS_BY_STRAIN_QUERYResult } from "@/../sanity.types"
+import { ProductModal } from "./product-modal"
 
 type Product = PRODUCTS_BY_STRAIN_QUERYResult[number]
 
@@ -15,13 +17,15 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const [open, setOpen] = useState(false)
   const badgeClass =
     STRAIN_BADGE[product.strainType ?? ""] ?? "bg-gray-700 text-gray-200"
 
   return (
+    <>
     <button
       type="button"
-      onClick={() => {/* Plan 03 wires the modal here */}}
+      onClick={() => setOpen(true)}
       className="w-60 rounded-xl bg-gray-900 border border-gray-800 overflow-hidden
                  hover:border-gray-600 hover:scale-[1.02] transition-all duration-200
                  text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
@@ -63,5 +67,11 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
       </div>
     </button>
+    <ProductModal
+      productId={product._id}
+      isOpen={open}
+      onClose={() => setOpen(false)}
+    />
+    </>
   )
 }
