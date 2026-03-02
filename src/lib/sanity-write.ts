@@ -7,5 +7,5 @@ export const sanityWriteClient = createClient({
   dataset,
   apiVersion,
   useCdn: false, // Always fetch fresh data for auth operations — never stale CDN cache
-  token: process.env.SANITY_WRITE_TOKEN, // Editor role token — server-only, NOT NEXT_PUBLIC_
+  token: process.env.SANITY_WRITE_TOKEN ?? process.env.SANITY_API_TOKEN, // Editor role token — server-only, NOT NEXT_PUBLIC_
 })
