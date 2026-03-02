@@ -11,10 +11,10 @@
 
 - [ ] **AUTH-01**: User can register for an account with email and password
 - [ ] **AUTH-02**: User sees a "pending approval" page after registration — cannot access menu until owner approves
-- [ ] **AUTH-03**: User can log in with email and password
-- [ ] **AUTH-04**: User session persists across browser refresh (user stays logged in)
+- [x] **AUTH-03**: User can log in with email and password
+- [x] **AUTH-04**: User session persists across browser refresh (user stays logged in)
 - [x] **AUTH-05**: Owner can view all pending accounts in Sanity Studio and mark each as approved or denied
-- [ ] **AUTH-06**: Denied user sees a clear "your access was not approved" message instead of being looped back to the login form
+- [x] **AUTH-06**: Denied user sees a clear "your access was not approved" message instead of being looped back to the login form
 
 ### Products (Sanity CMS)
 
@@ -87,10 +87,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | AUTH-01 | Phase 3 | Pending |
 | AUTH-02 | Phase 3 | Pending |
-| AUTH-03 | Phase 3 | Pending |
-| AUTH-04 | Phase 3 | Pending |
+| AUTH-03 | Phase 3 | Complete |
+| AUTH-04 | Phase 3 | Complete |
 | AUTH-05 | Phase 3 | Complete |
-| AUTH-06 | Phase 3 | Pending |
+| AUTH-06 | Phase 3 | Complete |
 | PROD-01 | Phase 2 | Complete |
 | PROD-02 | Phase 2 | Complete |
 | PROD-03 | Phase 2 | Complete |
@@ -114,4 +114,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-01*
-*Last updated: 2026-03-02 after plan 02-01 completion (PROD-01 through PROD-04 marked complete — product and siteUser schemas defined in Sanity Studio)*
+*Last updated: 2026-03-02 after plan 03-02 completion (AUTH-03, AUTH-04, AUTH-06 marked complete — Credentials provider, JWT strategy, DeniedError/PendingError implemented)*

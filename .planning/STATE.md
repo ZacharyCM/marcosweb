@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-last_updated: "2026-03-02T17:49:00Z"
+last_updated: "2026-03-02T17:57:30Z"
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 8
-  completed_plans: 5
+  completed_plans: 6
 ---
 
 # Project State
@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 ## Current Position
 
 Phase: 3 of 4 (Auth Gate)
-Plan: 1 of 4 in current phase — plan 01 complete
-Status: Phase 3 in progress — Plan 03-01 complete, ready for Plan 03-02
-Last activity: 2026-03-02 — Plan 03-01 complete (passwordHash schema, sanityWriteClient, auth-types.ts augmentations, next-auth@beta installed)
+Plan: 2 of 4 in current phase — plan 02 complete
+Status: Phase 3 in progress — Plan 03-02 complete, ready for Plan 03-03
+Last activity: 2026-03-02 — Plan 03-02 complete (auth.config.ts, auth.ts Credentials provider, proxy.ts, API route handler)
 
-Progress: [██████░░░░] 62%
+Progress: [███████░░░] 75%
 
 ## Performance Metrics
 
@@ -42,7 +42,7 @@ Progress: [██████░░░░] 62%
 |-------|-------|-------|----------|
 | 01-setup | 2/2 | 6 min | 6 min |
 | 02-data-layer | 2/2 | 2 min | 1 min |
-| 03-auth-gate | 1/4 | 2 min | 2 min |
+| 03-auth-gate | 2/4 | 7 min | 3.5 min |
 
 **Recent Trend:**
 - Last 5 plans: 3 min
@@ -76,6 +76,10 @@ Recent decisions affecting current work:
 - [03-01]: JWT augmentation targets @auth/core/jwt not next-auth/jwt — moduleResolution: bundler fails on the re-export path
 - [03-01]: NEXTAUTH_SECRET and NEXTAUTH_URL removed from .env.example — Auth.js v5 uses AUTH_SECRET and AUTH_URL
 - [03-01]: server-only import in sanity-write.ts provides build-time guard preventing accidental client component import
+- [03-02]: Split config pattern separates edge-safe auth.config.ts (no bcrypt/Node.js) from full auth.ts — required for Next.js 16 proxy compatibility
+- [03-02]: DeniedError and PendingError extend CredentialsSignin with code property — Auth.js surfaces code as ?code= query param on login redirect
+- [03-02]: Studio excluded from proxy.ts matcher — owner is not a siteUser, blocking /studio would lock them out of content management
+- [03-02]: JWT maxAge 24h tradeoff accepted — revocation requires user re-login; acceptable for small known customer base
 
 ### Pending Todos
 
@@ -89,5 +93,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: Completed 03-01-PLAN.md — passwordHash in siteUser schema, next-auth@beta/bcryptjs/zod installed, sanityWriteClient with server-only guard, auth-types.ts module augmentations, npx tsc --noEmit passes
+Stopped at: Completed 03-02-PLAN.md — auth.config.ts edge-safe config, auth.ts Credentials provider with bcryptjs+Sanity, DeniedError/PendingError typed errors, proxy.ts Next.js 16 route protection, API route handler, next build confirms proxy recognized
 Resume file: None
