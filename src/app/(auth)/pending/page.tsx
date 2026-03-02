@@ -21,7 +21,7 @@ export default async function PendingPage() {
       <form
         action={async () => {
           "use server"
-          await signOut({ redirectTo: "/" })
+          await signOut({ redirectTo: "/login" })
         }}
       >
         <button
