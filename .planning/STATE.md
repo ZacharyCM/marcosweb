@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-02T19:09:51.861Z"
+last_updated: "2026-03-02T20:36:00Z"
 progress:
-  total_phases: 3
+  total_phases: 4
   completed_phases: 3
-  total_plans: 8
-  completed_plans: 8
+  total_plans: 11
+  completed_plans: 10
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 
 ## Current Position
 
-Phase: 4 of 4 (Menu UI)
-Plan: 0 of N in current phase — ready to begin Phase 4
-Status: Phase 3 complete — all 4 plans done; auth gate verified end-to-end
-Last activity: 2026-03-02 — Plan 03-04 complete (pending page, menu stub, E2E auth gate verification — all 6 human tests passed)
+Phase: 4 of 4 (Product Display)
+Plan: 2 of 3 in current phase — Plan 04-02 complete
+Status: In progress — Phase 4 Plan 02 done; carousel layout, StrainCarousel, and ProductCard built
+Last activity: 2026-03-02 — Plan 04-02 complete (menu page RSC, StrainCarousel, ProductCard — npm run build passes)
 
-Progress: [██████████] 100% (Phase 3 complete)
+Progress: [█████████░] 91% (10/11 plans done)
 
 ## Performance Metrics
 
@@ -43,6 +43,7 @@ Progress: [██████████] 100% (Phase 3 complete)
 | 01-setup | 2/2 | 6 min | 6 min |
 | 02-data-layer | 2/2 | 2 min | 1 min |
 | 03-auth-gate | 4/4 | 54 min | 13.5 min |
+| 04-product-display | 2/3 (so far) | 5 min | 5 min |
 
 **Recent Trend:**
 - Last 5 plans: 3 min
@@ -88,6 +89,13 @@ Recent decisions affecting current work:
 - [03-04]: Denied users routed to /login?code=denied (not /pending) — prevents denied → /pending loop; message shown directly on login page via existing LoginForm error-code mapping
 - [03-04]: Logout redirects to /login (not /) — users land on login form after signing out
 - [03-04]: login() passes explicit redirectTo: "/menu" — ensures successful auth always lands on /menu regardless of callbackUrl
+- [04-01]: Age gate check runs before auth check in proxy — unverified visitors never see login form or app content
+- [04-01]: PUBLIC_PATHS allow /age-gate and /privacy unconditionally — must be reachable without any cookie
+- [04-01]: confirmAge redirects to /login after cookie set — age verification feeds directly into auth flow
+- [04-01]: SanityLive added to (app) layout so Studio edits propagate without full redeploy
+- [04-02]: Use product.primaryImage.url directly as next/image src — GROQ projects url as plain CDN string, not a Sanity image reference; urlFor() requires a reference object and would throw at runtime
+- [04-02]: overflow-hidden wrapper around overflow-x-auto carousel prevents page-level horizontal scrollbar without disabling internal scrollability
+- [04-02]: ProductCard onClick is empty placeholder — modal wiring deferred to Plan 03 per plan spec
 
 ### Pending Todos
 
@@ -100,5 +108,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: Completed 03-04-PLAN.md — pending page, menu stub, E2E auth gate human verification (all 6 scenarios passed)
+Stopped at: Completed 04-02-PLAN.md — menu page RSC, StrainCarousel, ProductCard — all TypeScript clean, npm run build passes
 Resume file: None

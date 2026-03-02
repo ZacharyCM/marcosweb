@@ -34,9 +34,9 @@
 
 ### Legal & Compliance
 
-- [ ] **LEGAL-01**: Age gate shown to unauthenticated visitors before any dispensary content is visible
-- [ ] **LEGAL-02**: Jurisdiction disclaimer visible on public-facing pages ("For adults 21+ only. For use where legal.")
-- [ ] **LEGAL-03**: Minimal privacy policy page covering what data is collected (email, account info), why, and retention
+- [x] **LEGAL-01**: Age gate shown to unauthenticated visitors before any dispensary content is visible
+- [x] **LEGAL-02**: Jurisdiction disclaimer visible on public-facing pages ("For adults 21+ only. For use where legal.")
+- [x] **LEGAL-03**: Minimal privacy policy page covering what data is collected (email, account info), why, and retention
 
 ### Infrastructure
 
@@ -101,9 +101,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MENU-04 | Phase 4 | Pending |
 | MENU-05 | Phase 4 | Pending |
 | MENU-06 | Phase 4 | Pending |
-| LEGAL-01 | Phase 4 | Pending |
-| LEGAL-02 | Phase 4 | Pending |
-| LEGAL-03 | Phase 4 | Pending |
+| LEGAL-01 | Phase 4 | Complete |
+| LEGAL-02 | Phase 4 | Complete |
+| LEGAL-03 | Phase 4 | Complete |
 | INFRA-01 | Phase 1 | Complete |
 | INFRA-02 | Phase 1 | Complete |
 
@@ -114,4 +114,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-01*
-*Last updated: 2026-03-02 after plan 03-03 completion (AUTH-01 marked complete — register server action + register page; AUTH-06 UI complete — LoginForm getErrorMessage maps denied/pending codes)*
+*Last updated: 2026-03-02 after plan 04-01 completion (LEGAL-01, LEGAL-02, LEGAL-03 marked complete — age gate in proxy, age-gate page, privacy policy, public layout disclaimer)*

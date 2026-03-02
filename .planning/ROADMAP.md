@@ -82,7 +82,7 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Refactor proxy.ts with age-gate cookie check, create age-gate page + Server Action, privacy policy page, jurisdiction disclaimer, SanityLive in app layout
+- [x] 04-01-PLAN.md — Refactor proxy.ts with age-gate cookie check, create age-gate page + Server Action, privacy policy page, jurisdiction disclaimer, SanityLive in app layout
 - [ ] 04-02-PLAN.md — Menu page RSC with parallel strain fetches, StrainCarousel CSS scroll-snap component, ProductCard with image/name/badge/price/THC/CBD
 - [ ] 04-03-PLAN.md — ProductModal with native dialog + media gallery, wire into ProductCard click handler, API route for full product detail, human verify E2E
 
@@ -96,4 +96,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Setup | 2/2 | Complete | 2026-03-01 |
 | 2. Data Layer | 2/2 | Complete | 2026-03-02 |
 | 3. Auth Gate | 4/4 | Complete | 2026-03-02 |
-| 4. Product Display | 0/3 | Not started | - |
+| 4. Product Display | 1/3 | In progress | - |
