@@ -97,3 +97,13 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 2. Data Layer | 2/2 | Complete | 2026-03-02 |
 | 3. Auth Gate | 4/4 | Complete | 2026-03-02 |
 | 4. Product Display | 2/3 | In progress | - |
+
+### Phase 5: bug fixing and polishing for deployment
+
+**Goal:** [To be planned]
+**Requirements**: TBD
+**Depends on:** Phase 4
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 5 to break down)

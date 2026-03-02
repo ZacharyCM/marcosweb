@@ -97,6 +97,10 @@ Recent decisions affecting current work:
 - [04-02]: overflow-hidden wrapper around overflow-x-auto carousel prevents page-level horizontal scrollbar without disabling internal scrollability
 - [04-02]: ProductCard onClick is empty placeholder — modal wiring deferred to Plan 03 per plan spec
 
+### Roadmap Evolution
+
+- Phase 5 added: bug fixing and polishing for deployment
+
 ### Pending Todos
 
 None yet.
