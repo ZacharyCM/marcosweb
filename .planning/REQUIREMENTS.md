@@ -18,10 +18,10 @@
 
 ### Products (Sanity CMS)
 
-- [ ] **PROD-01**: Owner can add new products via Sanity Studio (name, strain type, price, THC%, CBD%, description, effects, images/videos)
-- [ ] **PROD-02**: Owner can edit existing product details via Sanity Studio
-- [ ] **PROD-03**: Owner can delete products via Sanity Studio
-- [ ] **PROD-04**: Owner can upload multiple images and/or videos to a single product — these appear as a browsable gallery in the product detail modal
+- [x] **PROD-01**: Owner can add new products via Sanity Studio (name, strain type, price, THC%, CBD%, description, effects, images/videos)
+- [x] **PROD-02**: Owner can edit existing product details via Sanity Studio
+- [x] **PROD-03**: Owner can delete products via Sanity Studio
+- [x] **PROD-04**: Owner can upload multiple images and/or videos to a single product — these appear as a browsable gallery in the product detail modal
 
 ### Menu Display
 
@@ -91,10 +91,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTH-04 | Phase 3 | Pending |
 | AUTH-05 | Phase 3 | Pending |
 | AUTH-06 | Phase 3 | Pending |
-| PROD-01 | Phase 2 | Pending |
-| PROD-02 | Phase 2 | Pending |
-| PROD-03 | Phase 2 | Pending |
-| PROD-04 | Phase 2 | Pending |
+| PROD-01 | Phase 2 | Complete |
+| PROD-02 | Phase 2 | Complete |
+| PROD-03 | Phase 2 | Complete |
+| PROD-04 | Phase 2 | Complete |
 | MENU-01 | Phase 4 | Pending |
 | MENU-02 | Phase 4 | Pending |
 | MENU-03 | Phase 4 | Pending |
@@ -114,4 +114,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-01*
-*Last updated: 2026-03-01 after plan 01-02 completion (INFRA-01 marked complete — site deployed to https://marcosweb.vercel.app)*
+*Last updated: 2026-03-02 after plan 02-01 completion (PROD-01 through PROD-04 marked complete — product and siteUser schemas defined in Sanity Studio)*

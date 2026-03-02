@@ -47,7 +47,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Define product and siteUser schemas, register in schemaTypes index, wire into sanity.config.ts
+- [x] 02-01-PLAN.md — Define product and siteUser schemas, register in schemaTypes index, wire into sanity.config.ts
 - [ ] 02-02-PLAN.md — Write typed GROQ queries with defineQuery, run TypeGen pipeline, update tsconfig.json
 
 ### Phase 3: Auth Gate
@@ -87,6 +87,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Setup | 2/2 | Complete | 2026-03-01 |
-| 2. Data Layer | 0/2 | Not started | - |
+| 2. Data Layer | 1/2 | In progress | - |
 | 3. Auth Gate | 0/TBD | Not started | - |
 | 4. Product Display | 0/TBD | Not started | - |

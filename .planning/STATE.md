@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 
 ## Current Position
 
-Phase: 1 of 4 (Setup)
-Plan: 2 of 2 in current phase — PHASE COMPLETE
-Status: Phase 1 complete, ready for Phase 2
-Last activity: 2026-03-01 — Plan 02 complete (Vercel deployment, CORS configuration, production stack verified)
+Phase: 2 of 4 (Data Layer)
+Plan: 1 of 2 in current phase — plan 01 complete
+Status: Phase 2 in progress, Plan 02-01 complete
+Last activity: 2026-03-02 — Plan 02-01 complete (Sanity schemas: product + siteUser, registered in Studio)
 
-Progress: [██░░░░░░░░] 20%
+Progress: [███░░░░░░░] 30%
 
 ## Performance Metrics
 
@@ -51,6 +51,10 @@ Recent decisions affecting current work:
 - [01-02]: NEXTAUTH_URL set to production domain in Vercel; .env.local keeps localhost — each environment has its own value
 - [01-02]: Sanity API token scoped to Viewer role only — sufficient for Phase 2 reads, principle of least privilege
 - [01-02]: Studio fix: "use client" + layout.tsx split required for Vercel production build — page.tsx client, layout.tsx holds metadata
+- [02-01]: siteUser omits passwordHash — Phase 3 research will determine if Auth.js stores credentials separately or Sanity holds them
+- [02-01]: strainType values lowercase (sativa/hybrid/indica) — Phase 4 carousel GROQ queries filter on these exact strings
+- [02-01]: media uses type:file with accept:video/* for videos, not type:image — prevents Sanity from processing video assets as images
+- [02-01]: effects stored as string array, not comma-separated string — enables per-effect filtering in Phase 4
 
 ### Pending Todos
 
@@ -63,6 +67,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-01
-Stopped at: Completed 01-02-PLAN.md — Vercel deployment, CORS configuration, production stack verified at https://marcosweb.vercel.app
+Last session: 2026-03-02
+Stopped at: Completed 02-01-PLAN.md — Sanity product and siteUser schemas defined, registered in Studio, TypeScript clean, build succeeds
 Resume file: None
