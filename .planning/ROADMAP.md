@@ -29,9 +29,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. The site deploys to Vercel and the live URL loads without errors
   4. Sanity CORS origins include localhost and the Vercel domain — a GROQ query run from the deployed URL returns data without a CORS error
   5. Environment variables (SANITY project ID, dataset, API token, NEXTAUTH_SECRET) are present in both local `.env.local` and Vercel project settings, and `.env.example` documents all required keys
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
+- [ ] 01-01-PLAN.md — Scaffold Next.js 15 project with embedded Sanity Studio, Tailwind v4, Sanity client, and env files
+- [ ] 01-02-PLAN.md — Deploy to Vercel, configure Sanity CORS origins, verify production stack
 
 ### Phase 2: Data Layer
 **Goal**: All Sanity document schemas are defined, the typed GROQ query library is complete, and the owner can create/edit/delete products in Sanity Studio
@@ -82,7 +84,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Setup | 0/TBD | Not started | - |
+| 1. Setup | 0/2 | Not started | - |
 | 2. Data Layer | 0/TBD | Not started | - |
 | 3. Auth Gate | 0/TBD | Not started | - |
 | 4. Product Display | 0/TBD | Not started | - |
