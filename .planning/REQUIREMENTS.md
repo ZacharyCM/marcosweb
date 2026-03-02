@@ -13,7 +13,7 @@
 - [ ] **AUTH-02**: User sees a "pending approval" page after registration — cannot access menu until owner approves
 - [ ] **AUTH-03**: User can log in with email and password
 - [ ] **AUTH-04**: User session persists across browser refresh (user stays logged in)
-- [ ] **AUTH-05**: Owner can view all pending accounts in Sanity Studio and mark each as approved or denied
+- [x] **AUTH-05**: Owner can view all pending accounts in Sanity Studio and mark each as approved or denied
 - [ ] **AUTH-06**: Denied user sees a clear "your access was not approved" message instead of being looped back to the login form
 
 ### Products (Sanity CMS)
@@ -89,7 +89,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTH-02 | Phase 3 | Pending |
 | AUTH-03 | Phase 3 | Pending |
 | AUTH-04 | Phase 3 | Pending |
-| AUTH-05 | Phase 3 | Pending |
+| AUTH-05 | Phase 3 | Complete |
 | AUTH-06 | Phase 3 | Pending |
 | PROD-01 | Phase 2 | Complete |
 | PROD-02 | Phase 2 | Complete |

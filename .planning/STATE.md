@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-last_updated: "2026-03-02T05:15:37.269Z"
+status: in_progress
+last_updated: "2026-03-02T17:49:00Z"
 progress:
-  total_phases: 2
+  total_phases: 4
   completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
+  total_plans: 8
+  completed_plans: 5
 ---
 
 # Project State
@@ -18,23 +18,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** Approved customers can browse the full product menu by strain type, seeing pricing, potency, and descriptions — giving the dispensary a professional digital presence without any e-commerce complexity.
-**Current focus:** Phase 1 — Setup
+**Current focus:** Phase 3 — Auth Gate
 
 ## Current Position
 
-Phase: 2 of 4 (Data Layer)
-Plan: 2 of 2 in current phase — plan 02 complete, Phase 2 complete
-Status: Phase 2 complete — ready for Phase 3 (Auth Gate)
-Last activity: 2026-03-02 — Plan 02-02 complete (GROQ queries with defineQuery, TypeGen pipeline, sanity.types.ts generated)
+Phase: 3 of 4 (Auth Gate)
+Plan: 1 of 4 in current phase — plan 01 complete
+Status: Phase 3 in progress — Plan 03-01 complete, ready for Plan 03-02
+Last activity: 2026-03-02 — Plan 03-01 complete (passwordHash schema, sanityWriteClient, auth-types.ts augmentations, next-auth@beta installed)
 
-Progress: [█████░░░░░] 50%
+Progress: [██████░░░░] 62%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 6 min (automated tasks only; Plan 02 was human-action tasks)
-- Total execution time: 6 min automated
+- Total plans completed: 5
+- Average duration: 3 min (automated tasks)
+- Total execution time: 8 min automated
 
 **By Phase:**
 
@@ -42,9 +42,10 @@ Progress: [█████░░░░░] 50%
 |-------|-------|-------|----------|
 | 01-setup | 2/2 | 6 min | 6 min |
 | 02-data-layer | 2/2 | 2 min | 1 min |
+| 03-auth-gate | 1/4 | 2 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 6 min
+- Last 5 plans: 3 min
 - Trend: —
 
 *Updated after each plan completion*
@@ -72,6 +73,9 @@ Recent decisions affecting current work:
 - [02-02]: TypeGen naming convention uses variable name as type suffix (ALL_PRODUCTS_QUERYResult not AllProductsQueryResult) — Sanity TypeGen standard behavior
 - [02-02]: sanity.cli.ts typegen block does not accept 'enabled' property — block presence enables TypeGen; removed enabled:true (plan spec error)
 - [02-02]: schema.json gitignored — generated at typegen runtime, not committed
+- [03-01]: JWT augmentation targets @auth/core/jwt not next-auth/jwt — moduleResolution: bundler fails on the re-export path
+- [03-01]: NEXTAUTH_SECRET and NEXTAUTH_URL removed from .env.example — Auth.js v5 uses AUTH_SECRET and AUTH_URL
+- [03-01]: server-only import in sanity-write.ts provides build-time guard preventing accidental client component import
 
 ### Pending Todos
 
@@ -79,11 +83,11 @@ None yet.
 
 ### Blockers/Concerns
 
-- [Phase 3]: Auth.js v5 GA status unconfirmed — verify before implementation begins
+- [Phase 3]: SANITY_WRITE_TOKEN (Editor role) and AUTH_SECRET must be set in .env.local before Plans 03-02 through 03-04 can run
 - [Phase 4]: Client's jurisdiction for cannabis compliance (state-specific labeling rules) must be confirmed before product card design is finalized
 
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: Completed 02-02-PLAN.md — GROQ queries with defineQuery, TypeGen pipeline run (13 schema types, 4 queries), sanity.types.ts generated, tsconfig.json updated, Phase 2 complete
+Stopped at: Completed 03-01-PLAN.md — passwordHash in siteUser schema, next-auth@beta/bcryptjs/zod installed, sanityWriteClient with server-only guard, auth-types.ts module augmentations, npx tsc --noEmit passes
 Resume file: None
