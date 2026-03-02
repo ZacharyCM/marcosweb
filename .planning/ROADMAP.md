@@ -13,7 +13,7 @@ Four phases, each delivering one coherent capability that the next phase depends
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Setup** - Next.js 15 project and Sanity project wired together and deployed on Vercel
-- [ ] **Phase 2: Data Layer** - Sanity schemas, GROQ queries, TypeScript types, and embedded Studio route
+- [x] **Phase 2: Data Layer** - Sanity schemas, GROQ queries, TypeScript types, and embedded Studio route
 - [ ] **Phase 3: Auth Gate** - Registration, login, approval flow, middleware — fully hardened before any menu UI
 - [ ] **Phase 4: Product Display** - Netflix-style carousels, product cards, detail modal, dark theme, legal compliance
 
@@ -48,7 +48,7 @@ Plans:
 
 Plans:
 - [x] 02-01-PLAN.md — Define product and siteUser schemas, register in schemaTypes index, wire into sanity.config.ts
-- [ ] 02-02-PLAN.md — Write typed GROQ queries with defineQuery, run TypeGen pipeline, update tsconfig.json
+- [x] 02-02-PLAN.md — Write typed GROQ queries with defineQuery, run TypeGen pipeline, update tsconfig.json
 
 ### Phase 3: Auth Gate
 **Goal**: Users can register, log in, and be approved/denied — and the middleware blocks all unauthenticated or non-approved users from accessing `/menu/**` with no bypass possible
@@ -87,6 +87,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Setup | 2/2 | Complete | 2026-03-01 |
-| 2. Data Layer | 1/2 | In progress | - |
+| 2. Data Layer | 2/2 | Complete | 2026-03-02 |
 | 3. Auth Gate | 0/TBD | Not started | - |
 | 4. Product Display | 0/TBD | Not started | - |

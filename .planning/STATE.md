@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 ## Current Position
 
 Phase: 2 of 4 (Data Layer)
-Plan: 1 of 2 in current phase — plan 01 complete
-Status: Phase 2 in progress, Plan 02-01 complete
-Last activity: 2026-03-02 — Plan 02-01 complete (Sanity schemas: product + siteUser, registered in Studio)
+Plan: 2 of 2 in current phase — plan 02 complete, Phase 2 complete
+Status: Phase 2 complete — ready for Phase 3 (Auth Gate)
+Last activity: 2026-03-02 — Plan 02-02 complete (GROQ queries with defineQuery, TypeGen pipeline, sanity.types.ts generated)
 
-Progress: [███░░░░░░░] 30%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
@@ -28,6 +28,7 @@ Progress: [███░░░░░░░] 30%
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-setup | 2/2 | 6 min | 6 min |
+| 02-data-layer | 2/2 | 2 min | 1 min |
 
 **Recent Trend:**
 - Last 5 plans: 6 min
@@ -55,6 +56,9 @@ Recent decisions affecting current work:
 - [02-01]: strainType values lowercase (sativa/hybrid/indica) — Phase 4 carousel GROQ queries filter on these exact strings
 - [02-01]: media uses type:file with accept:video/* for videos, not type:image — prevents Sanity from processing video assets as images
 - [02-01]: effects stored as string array, not comma-separated string — enables per-effect filtering in Phase 4
+- [02-02]: TypeGen naming convention uses variable name as type suffix (ALL_PRODUCTS_QUERYResult not AllProductsQueryResult) — Sanity TypeGen standard behavior
+- [02-02]: sanity.cli.ts typegen block does not accept 'enabled' property — block presence enables TypeGen; removed enabled:true (plan spec error)
+- [02-02]: schema.json gitignored — generated at typegen runtime, not committed
 
 ### Pending Todos
 
@@ -68,5 +72,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: Completed 02-01-PLAN.md — Sanity product and siteUser schemas defined, registered in Studio, TypeScript clean, build succeeds
+Stopped at: Completed 02-02-PLAN.md — GROQ queries with defineQuery, TypeGen pipeline run (13 schema types, 4 queries), sanity.types.ts generated, tsconfig.json updated, Phase 2 complete
 Resume file: None
