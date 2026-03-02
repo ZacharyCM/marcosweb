@@ -15,8 +15,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Setup** - Next.js 15 project and Sanity project wired together and deployed on Vercel
 - [x] **Phase 2: Data Layer** - Sanity schemas, GROQ queries, TypeScript types, and embedded Studio route
 - [x] **Phase 3: Auth Gate** - Registration, login, approval flow, middleware — fully hardened before any menu UI
-- [ ] **Phase 4: Product Display** - Netflix-style carousels, product cards, detail modal, dark theme, legal compliance
-- [ ] **Phase 5: Bug Fixing and Polishing for Deployment** - Production environment hardening, Vercel env var fixes, Sanity CORS verification, full E2E smoke test on live URL before client handover
+- [x] **Phase 4: Product Display** - Netflix-style carousels, product cards, detail modal, dark theme, legal compliance
+- [x] **Phase 5: Bug Fixing and Polishing for Deployment** - Production environment hardening, Vercel env var fixes, Sanity CORS verification, full E2E smoke test on live URL before client handover
 
 ## Phase Details
 
@@ -85,7 +85,7 @@ Plans:
 Plans:
 - [x] 04-01-PLAN.md — Refactor proxy.ts with age-gate cookie check, create age-gate page + Server Action, privacy policy page, jurisdiction disclaimer, SanityLive in app layout
 - [x] 04-02-PLAN.md — Menu page RSC with parallel strain fetches, StrainCarousel CSS scroll-snap component, ProductCard with image/name/badge/price/THC/CBD
-- [ ] 04-03-PLAN.md — ProductModal with native dialog + media gallery, wire into ProductCard click handler, API route for full product detail, human verify E2E
+- [x] 04-03-PLAN.md — ProductModal with native dialog + media gallery, wire into ProductCard click handler, API route for full product detail, human verify E2E
 
 ### Phase 5: Bug Fixing and Polishing for Deployment
 **Goal**: Every user-facing flow works correctly on the live Vercel production URL — auth, Studio, menu, and modal — and the site is ready for client handover
@@ -95,7 +95,7 @@ Plans:
 
 Plans:
 - [x] 05-01-PLAN.md — Add AUTH_URL to .env.local, update REQUIREMENTS.md; set Vercel env vars (AUTH_SECRET, AUTH_URL, SANITY_WRITE_TOKEN), verify Sanity CORS; production redeployed at https://marcosweb.vercel.app
-- [ ] 05-02-PLAN.md — Full E2E smoke test on live Vercel production URL covering all 5 user flows
+- [x] 05-02-PLAN.md — Full E2E smoke test on live Vercel production URL covering all 5 user flows
 
 ## Progress
 
@@ -107,5 +107,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Setup | 2/2 | Complete | 2026-03-01 |
 | 2. Data Layer | 2/2 | Complete | 2026-03-02 |
 | 3. Auth Gate | 4/4 | Complete | 2026-03-02 |
-| 4. Product Display | 2/3 | In progress | - |
-| 5. Bug Fixing & Deployment | 1/2 | In progress | - |
+| 4. Product Display | 3/3 | Complete | 2026-03-02 |
+| 5. Bug Fixing & Deployment | 2/2 | Complete | 2026-03-02 |

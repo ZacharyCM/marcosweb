@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-last_updated: "2026-03-02T23:05:00Z"
+status: complete
+last_updated: "2026-03-02T23:30:00Z"
 progress:
   total_phases: 5
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 13
-  completed_plans: 12
+  completed_plans: 13
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 
 ## Current Position
 
-Phase: 5 of 5 (Bug Fixing and Polishing for Deployment)
-Plan: 2 of 2 in current phase — Plan 05-01 complete; ready for 05-02 E2E smoke test
-Status: In progress — all infrastructure complete, proceeding to smoke test
-Last activity: 2026-03-02 — Plan 05-01 fully complete; Vercel env vars set, Sanity CORS verified, production redeployed
+Phase: 5 of 5 (Bug Fixing and Polishing for Deployment) — COMPLETE
+Plan: 2 of 2 in current phase — Plan 05-02 complete; all E2E flows passed
+Status: COMPLETE — all 5 phases done, v1.0 milestone achieved, site ready for client handover
+Last activity: 2026-03-02 — Plan 05-02 complete; all 5 E2E flows passed on https://marcosweb.vercel.app; two caching bugs fixed and deployed
 
-Progress: [██████████] 92% (12/13 plans done — 1 remaining in Phase 5)
+Progress: [██████████] 100% (13/13 plans done — project complete)
 
 ## Performance Metrics
 
@@ -98,6 +98,8 @@ Recent decisions affecting current work:
 - [04-02]: ProductCard onClick is empty placeholder — modal wiring deferred to Plan 03 per plan spec
 - [05-01]: AUTH_URL must be set in addition to NEXTAUTH_URL for Auth.js v5 on Next.js 16 — signIn() "Configuration" error without it (GitHub issue #13388)
 - [05-01]: REQUIREMENTS.md MENU-04/05 corrected to complete — Phase 4 plan 03 delivered product modal and media gallery; docs were lagging behind implementation
+- [05-02]: useCdn: false is mandatory for this app — Sanity CDN caches do not invalidate immediately on deletion; owner manages products in real time so stale CDN responses are unacceptable
+- [05-02]: revalidate = 0 on menu/page.tsx — indefinite Next.js Data Cache silently prevented content changes from appearing without full redeploy; zero revalidation ensures every request reflects current Sanity content
 
 ### Roadmap Evolution
 
@@ -115,5 +117,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: 05-01-PLAN.md complete — all infrastructure done; ready to begin 05-02 E2E smoke test
+Stopped at: 05-02-PLAN.md complete — all E2E flows passed, v1.0 milestone complete
 Resume file: None
