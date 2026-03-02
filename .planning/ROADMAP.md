@@ -94,7 +94,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 05-01-PLAN.md — Add AUTH_URL to .env.local, update REQUIREMENTS.md, human: set Vercel env vars (AUTH_SECRET, AUTH_URL, SANITY_WRITE_TOKEN), verify Sanity CORS
+- [~] 05-01-PLAN.md — Add AUTH_URL to .env.local, update REQUIREMENTS.md, human: set Vercel env vars (AUTH_SECRET, AUTH_URL, SANITY_WRITE_TOKEN), verify Sanity CORS [Task 1 done; blocked at Task 2 human-action checkpoint]
 - [ ] 05-02-PLAN.md — Full E2E smoke test on live Vercel production URL covering all 5 user flows
 
 ## Progress
@@ -108,4 +108,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Data Layer | 2/2 | Complete | 2026-03-02 |
 | 3. Auth Gate | 4/4 | Complete | 2026-03-02 |
 | 4. Product Display | 2/3 | In progress | - |
-| 5. Bug Fixing & Deployment | 0/2 | Planned | - |
+| 5. Bug Fixing & Deployment | 0/2 | In progress (blocked: human action) | - |

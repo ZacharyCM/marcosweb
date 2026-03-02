@@ -3,11 +3,11 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-02T22:21:27.414Z"
+last_updated: "2026-03-02T22:50:00Z"
 progress:
   total_phases: 5
   completed_phases: 4
-  total_plans: 11
+  total_plans: 13
   completed_plans: 11
 ---
 
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** Approved customers can browse the full product menu by strain type, seeing pricing, potency, and descriptions — giving the dispensary a professional digital presence without any e-commerce complexity.
-**Current focus:** Phase 4 — Menu UI
+**Current focus:** Phase 5 — Bug Fixing and Polishing for Deployment
 
 ## Current Position
 
-Phase: 4 of 4 (Product Display)
-Plan: 2 of 3 in current phase — Plan 04-02 complete
-Status: In progress — Phase 4 Plan 02 done; carousel layout, StrainCarousel, and ProductCard built
-Last activity: 2026-03-02 — Plan 04-02 complete (menu page RSC, StrainCarousel, ProductCard — npm run build passes)
+Phase: 5 of 5 (Bug Fixing and Polishing for Deployment)
+Plan: 1 of 2 in current phase — Plan 05-01 Task 1 complete; blocked at Task 2 checkpoint:human-action
+Status: Blocked — awaiting Vercel env vars (AUTH_SECRET, AUTH_URL, SANITY_WRITE_TOKEN) and Sanity CORS setup
+Last activity: 2026-03-02 — Plan 05-01 Task 1 done; AUTH_URL added to .env.local, REQUIREMENTS.md updated
 
-Progress: [█████████░] 91% (10/11 plans done)
+Progress: [██████████] 91% (11/13 plans done — 2 remaining in Phase 5)
 
 ## Performance Metrics
 
@@ -96,6 +96,8 @@ Recent decisions affecting current work:
 - [04-02]: Use product.primaryImage.url directly as next/image src — GROQ projects url as plain CDN string, not a Sanity image reference; urlFor() requires a reference object and would throw at runtime
 - [04-02]: overflow-hidden wrapper around overflow-x-auto carousel prevents page-level horizontal scrollbar without disabling internal scrollability
 - [04-02]: ProductCard onClick is empty placeholder — modal wiring deferred to Plan 03 per plan spec
+- [05-01]: AUTH_URL must be set in addition to NEXTAUTH_URL for Auth.js v5 on Next.js 16 — signIn() "Configuration" error without it (GitHub issue #13388)
+- [05-01]: REQUIREMENTS.md MENU-04/05 corrected to complete — Phase 4 plan 03 delivered product modal and media gallery; docs were lagging behind implementation
 
 ### Roadmap Evolution
 
@@ -108,9 +110,10 @@ None yet.
 ### Blockers/Concerns
 
 - [Phase 4]: Client's jurisdiction for cannabis compliance (state-specific labeling rules) must be confirmed before product card design is finalized
+- [Phase 5 - ACTIVE]: Awaiting human action on infrastructure checkpoint — must set AUTH_SECRET, AUTH_URL, SANITY_WRITE_TOKEN on Vercel and verify Sanity CORS production domain with credentials before smoke test
 
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: Completed 04-02-PLAN.md — menu page RSC, StrainCarousel, ProductCard — all TypeScript clean, npm run build passes
+Stopped at: 05-01-PLAN.md Task 1 complete; blocked at Task 2 checkpoint:human-action — Vercel env vars and Sanity CORS require manual configuration
 Resume file: None
