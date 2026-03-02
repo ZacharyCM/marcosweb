@@ -60,9 +60,13 @@ Plans:
   3. An approved user can log in with email and password, reach the menu page, refresh the browser, and remain logged in
   4. The owner can open Sanity Studio, view pending accounts, and mark one as approved or denied — the status change is reflected in Sanity
   5. A denied user who attempts to log in sees a clear "your access was not approved" message and is not sent to the login form in a loop
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
+- [ ] 03-01-PLAN.md — Add passwordHash to siteUser schema, install next-auth@beta/bcryptjs/zod, create sanity-write.ts and auth-types.ts
+- [ ] 03-02-PLAN.md — Implement Auth.js core: auth.config.ts, auth.ts (Credentials provider + JWT), proxy.ts, API route handler
+- [ ] 03-03-PLAN.md — Build server actions (register/login/logout) and auth pages (register form, login form)
+- [ ] 03-04-PLAN.md — Create pending page and menu stub, then human-verify the full auth gate end-to-end
 
 ### Phase 4: Product Display
 **Goal**: An approved user can browse the full dispensary menu by strain type, open any product for full detail, and the site meets all legal compliance requirements for public launch
@@ -88,5 +92,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Setup | 2/2 | Complete | 2026-03-01 |
 | 2. Data Layer | 2/2 | Complete | 2026-03-02 |
-| 3. Auth Gate | 0/TBD | Not started | - |
+| 3. Auth Gate | 0/4 | Not started | - |
 | 4. Product Display | 0/TBD | Not started | - |
