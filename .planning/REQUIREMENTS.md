@@ -25,12 +25,12 @@
 
 ### Menu Display
 
-- [ ] **MENU-01**: Approved user sees three horizontal carousels on the menu page — one each for Sativa, Hybrid, and Indica
-- [ ] **MENU-02**: Each product card displays name, strain type badge, price, THC%, and CBD%
-- [ ] **MENU-03**: Each product card displays the product's primary image
+- [x] **MENU-01**: Approved user sees three horizontal carousels on the menu page — one each for Sativa, Hybrid, and Indica
+- [x] **MENU-02**: Each product card displays name, strain type badge, price, THC%, and CBD%
+- [x] **MENU-03**: Each product card displays the product's primary image
 - [ ] **MENU-04**: Clicking a product card opens a detail modal with full description and effects
 - [ ] **MENU-05**: Product detail modal contains a media gallery — user can browse through all images and videos the owner uploaded for that product
-- [ ] **MENU-06**: A strain carousel section is hidden entirely if no products exist for that strain type
+- [x] **MENU-06**: A strain carousel section is hidden entirely if no products exist for that strain type
 
 ### Legal & Compliance
 
@@ -95,12 +95,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PROD-02 | Phase 2 | Complete |
 | PROD-03 | Phase 2 | Complete |
 | PROD-04 | Phase 2 | Complete |
-| MENU-01 | Phase 4 | Pending |
-| MENU-02 | Phase 4 | Pending |
-| MENU-03 | Phase 4 | Pending |
+| MENU-01 | Phase 4 | Complete |
+| MENU-02 | Phase 4 | Complete |
+| MENU-03 | Phase 4 | Complete |
 | MENU-04 | Phase 4 | Pending |
 | MENU-05 | Phase 4 | Pending |
-| MENU-06 | Phase 4 | Pending |
+| MENU-06 | Phase 4 | Complete |
 | LEGAL-01 | Phase 4 | Complete |
 | LEGAL-02 | Phase 4 | Complete |
 | LEGAL-03 | Phase 4 | Complete |
@@ -114,4 +114,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-01*
-*Last updated: 2026-03-02 after plan 04-01 completion (LEGAL-01, LEGAL-02, LEGAL-03 marked complete — age gate in proxy, age-gate page, privacy policy, public layout disclaimer)*
+*Last updated: 2026-03-02 after plan 04-02 completion (MENU-01, MENU-02, MENU-03, MENU-06 marked complete — carousel layout, StrainCarousel, ProductCard with all required fields)*
