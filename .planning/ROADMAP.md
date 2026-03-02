@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Setup** - Next.js 15 project and Sanity project wired together and deployed on Vercel
 - [x] **Phase 2: Data Layer** - Sanity schemas, GROQ queries, TypeScript types, and embedded Studio route
-- [ ] **Phase 3: Auth Gate** - Registration, login, approval flow, middleware — fully hardened before any menu UI
+- [x] **Phase 3: Auth Gate** - Registration, login, approval flow, middleware — fully hardened before any menu UI
 - [ ] **Phase 4: Product Display** - Netflix-style carousels, product cards, detail modal, dark theme, legal compliance
 
 ## Phase Details
@@ -66,7 +66,7 @@ Plans:
 - [x] 03-01-PLAN.md — Add passwordHash to siteUser schema, install next-auth@beta/bcryptjs/zod, create sanity-write.ts and auth-types.ts
 - [x] 03-02-PLAN.md — Implement Auth.js core: auth.config.ts, auth.ts (Credentials provider + JWT), proxy.ts, API route handler
 - [x] 03-03-PLAN.md — Build server actions (register/login/logout) and auth pages (register form, login form)
-- [ ] 03-04-PLAN.md — Create pending page and menu stub, then human-verify the full auth gate end-to-end
+- [x] 03-04-PLAN.md — Create pending page and menu stub, then human-verify the full auth gate end-to-end
 
 ### Phase 4: Product Display
 **Goal**: An approved user can browse the full dispensary menu by strain type, open any product for full detail, and the site meets all legal compliance requirements for public launch
@@ -92,5 +92,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Setup | 2/2 | Complete | 2026-03-01 |
 | 2. Data Layer | 2/2 | Complete | 2026-03-02 |
-| 3. Auth Gate | 3/4 | In progress | - |
+| 3. Auth Gate | 4/4 | Complete | 2026-03-02 |
 | 4. Product Display | 0/TBD | Not started | - |

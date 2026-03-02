@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-last_updated: "2026-03-02T17:58:42Z"
+last_updated: "2026-03-02T21:00:00Z"
 progress:
   total_phases: 4
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 8
-  completed_plans: 7
+  completed_plans: 8
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** Approved customers can browse the full product menu by strain type, seeing pricing, potency, and descriptions — giving the dispensary a professional digital presence without any e-commerce complexity.
-**Current focus:** Phase 3 — Auth Gate
+**Current focus:** Phase 4 — Menu UI
 
 ## Current Position
 
-Phase: 3 of 4 (Auth Gate)
-Plan: 3 of 4 in current phase — plan 03 complete
-Status: Phase 3 in progress — Plan 03-03 complete, ready for Plan 03-04
-Last activity: 2026-03-02 — Plan 03-03 complete (register/login/logout server actions, register page, login page + LoginForm component)
+Phase: 4 of 4 (Menu UI)
+Plan: 0 of N in current phase — ready to begin Phase 4
+Status: Phase 3 complete — all 4 plans done; auth gate verified end-to-end
+Last activity: 2026-03-02 — Plan 03-04 complete (pending page, menu stub, E2E auth gate verification — all 6 human tests passed)
 
-Progress: [████████░░] 87%
+Progress: [██████████] 100% (Phase 3 complete)
 
 ## Performance Metrics
 
@@ -42,7 +42,7 @@ Progress: [████████░░] 87%
 |-------|-------|-------|----------|
 | 01-setup | 2/2 | 6 min | 6 min |
 | 02-data-layer | 2/2 | 2 min | 1 min |
-| 03-auth-gate | 3/4 | 9 min | 3 min |
+| 03-auth-gate | 4/4 | 54 min | 13.5 min |
 
 **Recent Trend:**
 - Last 5 plans: 3 min
@@ -84,6 +84,10 @@ Recent decisions affecting current work:
 - [03-03]: login() only catches AuthError — NEXT_REDIRECT (success) must re-throw and propagate naturally
 - [03-03]: LoginForm handles errors from both useActionState and URL query params — covers both direct submit and Auth.js redirect flows
 - [03-03]: (auth) route group has no layout.tsx — root layout.tsx provides html/body; no extra wrapper needed
+- [03-04]: JWT re-fetch on every token validation — async jwt() re-queries Sanity so status changes take effect immediately without re-login; trades one Sanity read per request for real-time revocation
+- [03-04]: Denied users routed to /login?code=denied (not /pending) — prevents denied → /pending loop; message shown directly on login page via existing LoginForm error-code mapping
+- [03-04]: Logout redirects to /login (not /) — users land on login form after signing out
+- [03-04]: login() passes explicit redirectTo: "/menu" — ensures successful auth always lands on /menu regardless of callbackUrl
 
 ### Pending Todos
 
@@ -91,11 +95,10 @@ None yet.
 
 ### Blockers/Concerns
 
-- [Phase 3]: SANITY_WRITE_TOKEN (Editor role) and AUTH_SECRET must be set in .env.local before Plans 03-02 through 03-04 can run
 - [Phase 4]: Client's jurisdiction for cannabis compliance (state-specific labeling rules) must be confirmed before product card design is finalized
 
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: Completed 03-03-PLAN.md — register/login/logout server actions, register page with useActionState, login page (Server Component), LoginForm with getErrorMessage error-code mapping
+Stopped at: Completed 03-04-PLAN.md — pending page, menu stub, E2E auth gate human verification (all 6 scenarios passed)
 Resume file: None
