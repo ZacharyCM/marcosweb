@@ -41,7 +41,7 @@
 ### Infrastructure
 
 - [ ] **INFRA-01**: Site deployed and live on Vercel
-- [ ] **INFRA-02**: Sanity Studio embedded at `/studio` — owner accesses from the live site URL
+- [x] **INFRA-02**: Sanity Studio embedded at `/studio` — owner accesses from the live site URL
 
 ---
 
@@ -105,7 +105,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LEGAL-02 | Phase 4 | Pending |
 | LEGAL-03 | Phase 4 | Pending |
 | INFRA-01 | Phase 1 | Pending |
-| INFRA-02 | Phase 1 | Pending |
+| INFRA-02 | Phase 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 21 total
@@ -114,4 +114,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-01*
-*Last updated: 2026-03-01 after roadmap creation*
+*Last updated: 2026-03-01 after plan 01-01 completion (INFRA-02 marked complete)*

@@ -32,7 +32,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Scaffold Next.js 15 project with embedded Sanity Studio, Tailwind v4, Sanity client, and env files
+- [x] 01-01-PLAN.md — Scaffold Next.js 15 project with embedded Sanity Studio, Tailwind v4, Sanity client, and env files
 - [ ] 01-02-PLAN.md — Deploy to Vercel, configure Sanity CORS origins, verify production stack
 
 ### Phase 2: Data Layer
@@ -84,7 +84,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Setup | 0/2 | Not started | - |
+| 1. Setup | 1/2 | In progress | - |
 | 2. Data Layer | 0/TBD | Not started | - |
 | 3. Auth Gate | 0/TBD | Not started | - |
 | 4. Product Display | 0/TBD | Not started | - |
