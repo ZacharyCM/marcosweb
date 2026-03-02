@@ -44,9 +44,11 @@ Plans:
   2. Owner can edit an existing product's fields and delete a product from Sanity Studio
   3. A GROQ query run against the Sanity dataset returns products with resolved image URLs (not raw asset reference objects)
   4. TypeScript types for Product and SiteUser match the Sanity schema fields — the project compiles with zero type errors
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
+- [ ] 02-01-PLAN.md — Define product and siteUser schemas, register in schemaTypes index, wire into sanity.config.ts
+- [ ] 02-02-PLAN.md — Write typed GROQ queries with defineQuery, run TypeGen pipeline, update tsconfig.json
 
 ### Phase 3: Auth Gate
 **Goal**: Users can register, log in, and be approved/denied — and the middleware blocks all unauthenticated or non-approved users from accessing `/menu/**` with no bypass possible
@@ -85,6 +87,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Setup | 2/2 | Complete | 2026-03-01 |
-| 2. Data Layer | 0/TBD | Not started | - |
+| 2. Data Layer | 0/2 | Not started | - |
 | 3. Auth Gate | 0/TBD | Not started | - |
 | 4. Product Display | 0/TBD | Not started | - |
