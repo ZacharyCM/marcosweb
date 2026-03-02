@@ -30,5 +30,11 @@ export const siteUserType = defineType({
       },
       initialValue: 'pending',
     }),
+    defineField({
+      name: 'passwordHash',
+      title: 'Password Hash',
+      type: 'string',
+      hidden: true, // Hidden in Studio — owner never sees raw password hashes
+    }),
   ],
 })
