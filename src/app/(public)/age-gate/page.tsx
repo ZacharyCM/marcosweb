@@ -2,7 +2,7 @@ import { confirmAge } from "@/app/actions/age-gate"
 
 export default function AgeGatePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
+    <main className="flex flex-1 flex-col items-center justify-center gap-6 p-8">
       <div className="max-w-sm w-full text-center space-y-6">
         <h1 className="text-3xl font-bold">Pure Pressure</h1>
         <p className="text-gray-600">
