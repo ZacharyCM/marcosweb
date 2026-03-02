@@ -10,17 +10,20 @@ requires:
 
 provides:
   - AUTH_URL in .env.local for Auth.js v5 local development compatibility
+  - AUTH_SECRET and AUTH_URL on Vercel Production — fixes signIn "Configuration" error on Next.js 16
+  - SANITY_WRITE_TOKEN on Vercel Production with Editor role — enables owner write access from production
+  - Sanity CORS already included production domain with credentials — Studio works for client owner
   - REQUIREMENTS.md accurately reflects MENU-04 and MENU-05 as complete
-  - Instructions for Vercel AUTH_SECRET/AUTH_URL/SANITY_WRITE_TOKEN configuration
-  - Instructions for Sanity CORS production domain setup
+  - Production deployment redeployed at https://marcosweb.vercel.app with all env vars active
 
 affects:
-  - 05-02-smoke-test (Vercel env vars and CORS must be set before smoke test)
+  - 05-02-smoke-test (all env vars and CORS in place — smoke test can proceed immediately)
 
 tech-stack:
   added: []
   patterns:
     - "AUTH_URL alongside NEXTAUTH_URL: Auth.js v5 on Next.js 16 requires AUTH_URL explicitly set (not just NEXTAUTH_URL alias)"
+    - "Vercel env var checklist: AUTH_SECRET, AUTH_URL, SANITY_WRITE_TOKEN must all be present in Production for full Auth.js v5 + Sanity write functionality"
 
 key-files:
   created:
@@ -35,6 +38,7 @@ key-decisions:
 
 patterns-established:
   - "Env var hygiene: both AUTH_URL and NEXTAUTH_URL maintained as fallback aliases for local dev"
+  - "Vercel production deployments require explicit redeploy after env var changes to take effect"
 
 requirements-completed:
   - AUTH-01
@@ -50,33 +54,39 @@ requirements-completed:
   - PROD-03
   - PROD-04
 
-duration: 5min
+duration: 15min
 completed: 2026-03-02
 ---
 
 # Phase 5 Plan 01: Production Hardening Summary
 
-**AUTH_URL added to .env.local for Auth.js v5 signIn fix; REQUIREMENTS.md corrected to show MENU-04/05 complete; Vercel and Sanity manual configuration steps issued as blocking human checkpoint**
+**AUTH_URL and AUTH_SECRET added to Vercel Production to fix Auth.js v5 signIn bug on Next.js 16; SANITY_WRITE_TOKEN confirmed with Editor role; Sanity CORS verified; production redeployed at https://marcosweb.vercel.app**
 
 ## Performance
 
-- **Duration:** ~5 min
+- **Duration:** ~15 min (Task 1 automated + Task 2 human infrastructure steps)
 - **Started:** 2026-03-02T22:45:39Z
-- **Completed:** 2026-03-02T22:50:00Z
-- **Tasks:** 1 of 2 (Task 2 is a blocking human-action checkpoint)
+- **Completed:** 2026-03-02T23:05:00Z
+- **Tasks:** 2 of 2 (all complete)
 - **Files modified:** 2 (.env.local local only, REQUIREMENTS.md committed)
 
 ## Accomplishments
 
 - Added AUTH_URL=http://localhost:3000 to .env.local alongside NEXTAUTH_URL so Auth.js v5 local development works without the signIn "Configuration" error
-- Corrected REQUIREMENTS.md to mark MENU-04 and MENU-05 as [x] complete in both the checklist and traceability table — Phase 4 built the product modal and media gallery but docs were behind
-- Updated traceability table rows for MENU-04 and MENU-05 from Pending to Complete
-- Updated REQUIREMENTS.md last-updated timestamp to reflect phase 5 status
+- Added AUTH_SECRET to Vercel Production — fixes the signIn server action "Configuration" error on Next.js 16 (GitHub issue #13388)
+- Added AUTH_URL=https://marcosweb.vercel.app to Vercel Production — critical fix for Next.js 16 configuration error
+- Added SANITY_WRITE_TOKEN to Vercel Production — enables editor write access from production domain
+- Confirmed Sanity CORS already included https://marcosweb.vercel.app with credentials enabled
+- Confirmed write token has Editor role in Sanity manage
+- Triggered Vercel redeploy — build succeeded and deployed to https://marcosweb.vercel.app
+- Corrected REQUIREMENTS.md to mark MENU-04 and MENU-05 as [x] complete in both the checklist and traceability table
 
 ## Task Commits
 
 1. **Task 1: Add AUTH_URL to .env.local and mark MENU-04/05 complete** - `cf6583d` (chore)
-2. **Task 2: Vercel/Sanity manual infrastructure** - BLOCKED — human checkpoint required
+2. **Task 2: Vercel env vars and Sanity CORS** - Completed by orchestrator (human-action checkpoint resolved)
+
+**Plan metadata:** `220b4c1` (docs: complete plan)
 
 ## Files Created/Modified
 
@@ -90,7 +100,7 @@ completed: 2026-03-02
 
 ## Deviations from Plan
 
-None - plan executed exactly as written.
+None - plan executed exactly as written. Human-action checkpoint resolved successfully by orchestrator.
 
 ## Issues Encountered
 
@@ -98,37 +108,25 @@ None - plan executed exactly as written.
 
 ## User Setup Required
 
-Task 2 is a blocking human-action checkpoint. The following must be completed manually before the smoke test can proceed:
+All infrastructure steps completed:
 
-**STEP 1 — Vercel: Add/confirm AUTH_SECRET**
-- Open https://vercel.com/dashboard > Pure Pressure project > Settings > Environment Variables
-- Ensure AUTH_SECRET exists with value: `V2o1bgBUxPA9I6UrMwKd+uoWKbragUb+syXxcq+kItc=` (Production)
+- AUTH_SECRET added to Vercel Production
+- AUTH_URL=https://marcosweb.vercel.app added to Vercel Production
+- SANITY_WRITE_TOKEN added to Vercel Production
+- Sanity CORS: https://marcosweb.vercel.app already existed in CORS list with credentials enabled
+- Write token confirmed Editor role
+- Vercel redeployed successfully to https://marcosweb.vercel.app
 
-**STEP 2 — Vercel: Add/confirm AUTH_URL**
-- Ensure AUTH_URL exists with value: `https://<your-production-domain>.vercel.app` (Production, NOT localhost)
-- This is the critical fix for the signIn "Configuration" error on Next.js 16
-
-**STEP 3 — Vercel: Confirm SANITY_WRITE_TOKEN**
-- Ensure SANITY_WRITE_TOKEN exists with value from .env.local (skiw8t...) (Production)
-
-**STEP 4 — Sanity: Verify CORS includes production domain with credentials**
-- Open https://sanity.io/manage > Project vgi4fxay > API > CORS Origins
-- Confirm production Vercel domain is listed with "Allow credentials" checked
-- If missing: `npx sanity cors add https://<production-domain>.vercel.app --credentials`
-
-**STEP 5 — Sanity: Verify write token role is Editor or higher**
-- In sanity.io/manage > API > Tokens — find the skiw8t... token and confirm role is Editor
-
-**STEP 6 — Trigger Vercel redeploy** after any env var changes
-
-When done, type: `infrastructure-done` with a note on what was changed.
+No further manual setup required before smoke test.
 
 ## Next Phase Readiness
 
-- Task 1 complete: AUTH_URL in .env.local, REQUIREMENTS.md accurate
-- Blocked on human checkpoint: Vercel env vars and Sanity CORS must be set before the smoke test
-- Once infrastructure-done signal received, proceed to 05-02 E2E smoke test
+- All production infrastructure is in place
+- AUTH_SECRET and AUTH_URL correctly set on Vercel — signIn should work on live URL
+- SANITY_WRITE_TOKEN active on Vercel with Editor role — owner can create/upload products
+- Sanity CORS allows production domain — Studio accessible from live URL
+- Ready to proceed to 05-02: full E2E smoke test on https://marcosweb.vercel.app
 
 ---
 *Phase: 05-bug-fixing-and-polishing-for-deployment*
-*Completed: 2026-03-02 (partial — Task 2 awaits human action)*
+*Completed: 2026-03-02*

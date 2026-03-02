@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-02T22:50:00Z"
+last_updated: "2026-03-02T23:05:00Z"
 progress:
   total_phases: 5
   completed_phases: 4
   total_plans: 13
-  completed_plans: 11
+  completed_plans: 12
 ---
 
 # Project State
@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 ## Current Position
 
 Phase: 5 of 5 (Bug Fixing and Polishing for Deployment)
-Plan: 1 of 2 in current phase — Plan 05-01 Task 1 complete; blocked at Task 2 checkpoint:human-action
-Status: Blocked — awaiting Vercel env vars (AUTH_SECRET, AUTH_URL, SANITY_WRITE_TOKEN) and Sanity CORS setup
-Last activity: 2026-03-02 — Plan 05-01 Task 1 done; AUTH_URL added to .env.local, REQUIREMENTS.md updated
+Plan: 2 of 2 in current phase — Plan 05-01 complete; ready for 05-02 E2E smoke test
+Status: In progress — all infrastructure complete, proceeding to smoke test
+Last activity: 2026-03-02 — Plan 05-01 fully complete; Vercel env vars set, Sanity CORS verified, production redeployed
 
-Progress: [██████████] 91% (11/13 plans done — 2 remaining in Phase 5)
+Progress: [██████████] 92% (12/13 plans done — 1 remaining in Phase 5)
 
 ## Performance Metrics
 
@@ -110,10 +110,10 @@ None yet.
 ### Blockers/Concerns
 
 - [Phase 4]: Client's jurisdiction for cannabis compliance (state-specific labeling rules) must be confirmed before product card design is finalized
-- [Phase 5 - ACTIVE]: Awaiting human action on infrastructure checkpoint — must set AUTH_SECRET, AUTH_URL, SANITY_WRITE_TOKEN on Vercel and verify Sanity CORS production domain with credentials before smoke test
+- [Phase 5]: Infrastructure checkpoint resolved — AUTH_SECRET, AUTH_URL, SANITY_WRITE_TOKEN set on Vercel; Sanity CORS verified; production redeployed at https://marcosweb.vercel.app
 
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: 05-01-PLAN.md Task 1 complete; blocked at Task 2 checkpoint:human-action — Vercel env vars and Sanity CORS require manual configuration
+Stopped at: 05-01-PLAN.md complete — all infrastructure done; ready to begin 05-02 E2E smoke test
 Resume file: None
