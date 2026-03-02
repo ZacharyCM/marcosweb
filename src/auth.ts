@@ -60,11 +60,18 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
     }),
   ],
   callbacks: {
-    // AUTH-04: Extend JWT with id and status — baked into cookie at sign-in
-    jwt({ token, user }) {
+    // AUTH-04: Extend JWT with id and status — re-fetch status on every validation
+    // so admin status changes (denied/pending) take effect on the next request
+    async jwt({ token, user }) {
       if (user) {
         token.id = user.id as string
         token.status = user.status
+      } else if (token.id) {
+        const fresh = await sanityWriteClient.fetch<{ status: string } | null>(
+          `*[_type == "siteUser" && _id == $id][0]{status}`,
+          { id: token.id }
+        )
+        if (fresh) token.status = fresh.status
       }
       return token
     },

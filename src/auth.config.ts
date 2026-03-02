@@ -12,8 +12,15 @@ export const authConfig = {
 
       if (isMenuRoute) {
         if (isLoggedIn && isApproved) return true
-        if (isLoggedIn && !isApproved) {
-          // Pending or denied users hit /menu — redirect them to /pending
+        if (isLoggedIn) {
+          const status = auth?.user?.status
+          // Denied users go to /login with code=denied so the message shows immediately
+          if (status === "denied") {
+            const url = new URL("/login", nextUrl)
+            url.searchParams.set("code", "denied")
+            return Response.redirect(url)
+          }
+          // Pending users go to /pending
           return Response.redirect(new URL("/pending", nextUrl))
         }
         return false // Unauthenticated — Auth.js redirects to pages.signIn (/login)

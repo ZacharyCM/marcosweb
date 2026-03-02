@@ -1,5 +1,6 @@
 import { auth } from "@/auth"
 import { redirect } from "next/navigation"
+import { logout } from "@/app/actions/auth"
 
 export default async function MenuPage() {
   const session = await auth()
@@ -15,6 +16,11 @@ export default async function MenuPage() {
       <p className="text-gray-600">
         Welcome, {session.user.name ?? session.user.email}. Product display coming in Phase 4.
       </p>
+      <form action={logout}>
+        <button type="submit" className="text-sm text-gray-500 underline">
+          Sign out
+        </button>
+      </form>
     </main>
   )
 }

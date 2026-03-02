@@ -68,7 +68,7 @@ export async function login(
 
   try {
     // signIn() redirects to /menu on success (throws NEXT_REDIRECT — not an error)
-    await signIn("credentials", formData)
+    await signIn("credentials", { ...Object.fromEntries(formData), redirectTo: "/menu" })
   } catch (error) {
     if (error instanceof AuthError) {
       // Auth.js surfaces DeniedError.code and PendingError.code here
@@ -83,5 +83,5 @@ export async function login(
 }
 
 export async function logout() {
-  await signOut({ redirectTo: "/" })
+  await signOut({ redirectTo: "/login" })
 }
