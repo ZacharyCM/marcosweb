@@ -1,6 +1,8 @@
 import { auth } from "@/auth"
 import { redirect } from "next/navigation"
 import { sanityFetch } from "@/sanity/lib/live"
+
+export const revalidate = 0
 import { PRODUCTS_BY_STRAIN_QUERY } from "@/sanity/lib/queries"
 import { logout } from "@/app/actions/auth"
 import { StrainCarousel } from "./strain-carousel"
