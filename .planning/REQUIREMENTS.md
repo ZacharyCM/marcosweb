@@ -9,7 +9,7 @@
 
 ### Authentication & Access
 
-- [ ] **AUTH-01**: User can register for an account with email and password
+- [x] **AUTH-01**: User can register for an account with email and password
 - [ ] **AUTH-02**: User sees a "pending approval" page after registration — cannot access menu until owner approves
 - [x] **AUTH-03**: User can log in with email and password
 - [x] **AUTH-04**: User session persists across browser refresh (user stays logged in)
@@ -85,7 +85,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | Phase 3 | Pending |
+| AUTH-01 | Phase 3 | Complete |
 | AUTH-02 | Phase 3 | Pending |
 | AUTH-03 | Phase 3 | Complete |
 | AUTH-04 | Phase 3 | Complete |
@@ -114,4 +114,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-01*
-*Last updated: 2026-03-02 after plan 03-02 completion (AUTH-03, AUTH-04, AUTH-06 marked complete — Credentials provider, JWT strategy, DeniedError/PendingError implemented)*
+*Last updated: 2026-03-02 after plan 03-03 completion (AUTH-01 marked complete — register server action + register page; AUTH-06 UI complete — LoginForm getErrorMessage maps denied/pending codes)*

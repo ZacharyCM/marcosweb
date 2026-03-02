@@ -65,7 +65,7 @@ Plans:
 Plans:
 - [x] 03-01-PLAN.md — Add passwordHash to siteUser schema, install next-auth@beta/bcryptjs/zod, create sanity-write.ts and auth-types.ts
 - [x] 03-02-PLAN.md — Implement Auth.js core: auth.config.ts, auth.ts (Credentials provider + JWT), proxy.ts, API route handler
-- [ ] 03-03-PLAN.md — Build server actions (register/login/logout) and auth pages (register form, login form)
+- [x] 03-03-PLAN.md — Build server actions (register/login/logout) and auth pages (register form, login form)
 - [ ] 03-04-PLAN.md — Create pending page and menu stub, then human-verify the full auth gate end-to-end
 
 ### Phase 4: Product Display
@@ -92,5 +92,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Setup | 2/2 | Complete | 2026-03-01 |
 | 2. Data Layer | 2/2 | Complete | 2026-03-02 |
-| 3. Auth Gate | 2/4 | In progress | - |
+| 3. Auth Gate | 3/4 | In progress | - |
 | 4. Product Display | 0/TBD | Not started | - |

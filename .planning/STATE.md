@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-last_updated: "2026-03-02T17:57:30Z"
+last_updated: "2026-03-02T17:58:42Z"
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 8
-  completed_plans: 6
+  completed_plans: 7
 ---
 
 # Project State
@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 ## Current Position
 
 Phase: 3 of 4 (Auth Gate)
-Plan: 2 of 4 in current phase — plan 02 complete
-Status: Phase 3 in progress — Plan 03-02 complete, ready for Plan 03-03
-Last activity: 2026-03-02 — Plan 03-02 complete (auth.config.ts, auth.ts Credentials provider, proxy.ts, API route handler)
+Plan: 3 of 4 in current phase — plan 03 complete
+Status: Phase 3 in progress — Plan 03-03 complete, ready for Plan 03-04
+Last activity: 2026-03-02 — Plan 03-03 complete (register/login/logout server actions, register page, login page + LoginForm component)
 
-Progress: [███████░░░] 75%
+Progress: [████████░░] 87%
 
 ## Performance Metrics
 
@@ -42,7 +42,7 @@ Progress: [███████░░░] 75%
 |-------|-------|-------|----------|
 | 01-setup | 2/2 | 6 min | 6 min |
 | 02-data-layer | 2/2 | 2 min | 1 min |
-| 03-auth-gate | 2/4 | 7 min | 3.5 min |
+| 03-auth-gate | 3/4 | 9 min | 3 min |
 
 **Recent Trend:**
 - Last 5 plans: 3 min
@@ -80,6 +80,10 @@ Recent decisions affecting current work:
 - [03-02]: DeniedError and PendingError extend CredentialsSignin with code property — Auth.js surfaces code as ?code= query param on login redirect
 - [03-02]: Studio excluded from proxy.ts matcher — owner is not a siteUser, blocking /studio would lock them out of content management
 - [03-02]: JWT maxAge 24h tradeoff accepted — revocation requires user re-login; acceptable for small known customer base
+- [03-03]: redirect('/pending') outside try/catch in register() — redirect() throws NEXT_REDIRECT; catching it would silently swallow the redirect
+- [03-03]: login() only catches AuthError — NEXT_REDIRECT (success) must re-throw and propagate naturally
+- [03-03]: LoginForm handles errors from both useActionState and URL query params — covers both direct submit and Auth.js redirect flows
+- [03-03]: (auth) route group has no layout.tsx — root layout.tsx provides html/body; no extra wrapper needed
 
 ### Pending Todos
 
@@ -93,5 +97,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: Completed 03-02-PLAN.md — auth.config.ts edge-safe config, auth.ts Credentials provider with bcryptjs+Sanity, DeniedError/PendingError typed errors, proxy.ts Next.js 16 route protection, API route handler, next build confirms proxy recognized
+Stopped at: Completed 03-03-PLAN.md — register/login/logout server actions, register page with useActionState, login page (Server Component), LoginForm with getErrorMessage error-code mapping
 Resume file: None
