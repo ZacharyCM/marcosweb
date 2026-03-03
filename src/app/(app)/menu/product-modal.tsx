@@ -160,6 +160,7 @@ export function ProductModal({ productId, isOpen, onClose }: ProductModalProps) 
           <div className="flex gap-6 text-sm text-gray-400 border-t border-gray-800 pt-4">
             <span>THC {product.thcPercent != null ? `${product.thcPercent}%` : "—"}</span>
             <span>CBD {product.cbdPercent != null ? `${product.cbdPercent}%` : "—"}</span>
+            {product.quantity != null && <span>Qty {product.quantity}</span>}
             {product.strainType && (
               <span className="capitalize">{product.strainType}</span>
             )}

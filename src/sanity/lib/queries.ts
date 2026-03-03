@@ -10,6 +10,7 @@ export const ALL_PRODUCTS_QUERY = defineQuery(`
     price,
     thcPercent,
     cbdPercent,
+    quantity,
     description,
     effects,
     "media": media[] {
@@ -33,6 +34,7 @@ export const PRODUCT_BY_ID_QUERY = defineQuery(`
     price,
     thcPercent,
     cbdPercent,
+    quantity,
     description,
     effects,
     "media": media[] {
