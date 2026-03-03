@@ -4,7 +4,7 @@ import { login } from "@/app/actions/auth"
 import Link from "next/link"
 
 function getErrorMessage(error?: string, code?: string): string | null {
-  if (code === "denied") return "Your access request was not approved. Please contact the dispensary."
+  if (code === "denied") return "Your access request was not approved. Please contact the distribution."
   if (code === "pending") return "Your account is pending approval. Please check back later."
   if (error === "CredentialsSignin") return "Invalid email or password."
   return null

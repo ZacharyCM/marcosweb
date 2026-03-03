@@ -15,7 +15,7 @@ export default async function PendingPage() {
     <main className="flex min-h-screen flex-col items-center justify-center gap-6 p-8 text-center">
       <h1 className="text-2xl font-bold">Your account is pending approval</h1>
       <p className="max-w-sm text-gray-600">
-        The dispensary owner will review your registration and approve your access.
+        The distribution owner will review your registration and approve your access.
         You will need to sign in again after your account is approved.
       </p>
       {session && (
