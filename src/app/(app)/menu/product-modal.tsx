@@ -1,7 +1,7 @@
 "use client"
 import { useRef, useEffect, useState } from "react"
 import Image from "next/image"
-import type { PRODUCT_BY_ID_QUERYResult } from "@/../sanity.types"
+import type { PRODUCT_BY_ID_QUERY_RESULT } from "@/../sanity.types"
 
 interface ProductModalProps {
   productId: string
@@ -11,7 +11,7 @@ interface ProductModalProps {
 
 export function ProductModal({ productId, isOpen, onClose }: ProductModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null)
-  const [product, setProduct] = useState<PRODUCT_BY_ID_QUERYResult>(null)
+  const [product, setProduct] = useState<PRODUCT_BY_ID_QUERY_RESULT>(null)
   const [loading, setLoading] = useState(false)
   const [galleryIndex, setGalleryIndex] = useState(0)
 
@@ -31,7 +31,7 @@ export function ProductModal({ productId, isOpen, onClose }: ProductModalProps) 
     setLoading(true)
     fetch(`/api/product/${productId}`)
       .then((r) => r.json())
-      .then((data: PRODUCT_BY_ID_QUERYResult) => setProduct(data))
+      .then((data: PRODUCT_BY_ID_QUERY_RESULT) => setProduct(data))
       .finally(() => setLoading(false))
   }, [isOpen, productId])
 

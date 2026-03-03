@@ -1,10 +1,10 @@
 "use client"
 import { useState } from "react"
 import Image from "next/image"
-import type { PRODUCTS_BY_STRAIN_QUERYResult } from "@/../sanity.types"
+import type { PRODUCTS_BY_STRAIN_QUERY_RESULT } from "@/../sanity.types"
 import { ProductModal } from "./product-modal"
 
-type Product = PRODUCTS_BY_STRAIN_QUERYResult[number]
+type Product = PRODUCTS_BY_STRAIN_QUERY_RESULT[number]
 
 const STRAIN_BADGE: Record<string, string> = {
   sativa: "bg-green-800 text-green-200",

@@ -1,9 +1,9 @@
-import type { PRODUCTS_BY_STRAIN_QUERYResult } from "@/../sanity.types"
+import type { PRODUCTS_BY_STRAIN_QUERY_RESULT } from "@/../sanity.types"
 import { ProductCard } from "./product-card"
 
 interface StrainCarouselProps {
   label: string
-  products: PRODUCTS_BY_STRAIN_QUERYResult
+  products: PRODUCTS_BY_STRAIN_QUERY_RESULT
 }
 
 export function StrainCarousel({ label, products }: StrainCarouselProps) {
