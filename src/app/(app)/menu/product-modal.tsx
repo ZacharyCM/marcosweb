@@ -53,7 +53,7 @@ export function ProductModal({ productId, isOpen, onClose }: ProductModalProps) 
           </h2>
           {product && (
             <p className="text-lg font-semibold text-gray-300">
-              {product.price != null ? `$${product.price.toFixed(2)}` : ""}
+              {product.price != null ? `${product.price.toFixed(2)}` : ""}
             </p>
           )}
         </div>

@@ -59,7 +59,7 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
         <p className="text-lg font-bold text-white">
-          {product.price != null ? `$${product.price.toFixed(2)}` : "—"}
+          {product.price != null ? `${product.price.toFixed(2)}` : "—"}
         </p>
         <div className="flex gap-3 text-sm text-gray-400">
           <span>THC {product.thcPercent != null ? `${product.thcPercent}%` : "—"}</span>
