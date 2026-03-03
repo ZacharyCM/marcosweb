@@ -37,31 +37,34 @@ export type Product = {
   cbdPercent?: number;
   description?: string;
   effects?: Array<string>;
-  media?: Array<{
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-    _key: string;
-  } | {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
-    };
-    media?: unknown;
-    caption?: string;
-    _type: "file";
-    _key: string;
-  }>;
+  media?: Array<
+    | {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+        _key: string;
+      }
+    | {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+        };
+        media?: unknown;
+        caption?: string;
+        _type: "file";
+        _key: string;
+      }
+  >;
 };
 
 export type SanityImageCrop = {
@@ -182,12 +185,27 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SiteUser | Product | SanityImageCrop | SanityImageHotspot | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint | Slug;
+export type AllSanitySchemaTypes =
+  | SiteUser
+  | Product
+  | SanityImageCrop
+  | SanityImageHotspot
+  | SanityImagePaletteSwatch
+  | SanityImagePalette
+  | SanityImageDimensions
+  | SanityImageMetadata
+  | SanityFileAsset
+  | SanityAssetSourceData
+  | SanityImageAsset
+  | Geopoint
+  | Slug;
+
 export declare const internalGroqTypeReferenceTo: unique symbol;
-// Source: ./src/sanity/lib/queries.ts
+
+// Source: src/sanity/lib/queries.ts
 // Variable: ALL_PRODUCTS_QUERY
-// Query: *[_type == "product"] | order(name asc) {    _id,    _type,    name,    strainType,    price,    thcPercent,    cbdPercent,    description,    effects,    "media": media[] {      _type,      _key,      alt,      caption,      "url": asset->url,      "mimeType": asset->mimeType    }  }
-export type ALL_PRODUCTS_QUERYResult = Array<{
+// Query: *[_type == "product"] | order(name asc) {    _id,    _type,    name,    strainType,    price,    thcPercent,    cbdPercent,    quantity,    description,    effects,    "media": media[] {      _type,      _key,      alt,      caption,      "url": asset->url,      "mimeType": asset->mimeType    }  }
+export type ALL_PRODUCTS_QUERY_RESULT = Array<{
   _id: string;
   _type: "product";
   name: string | null;
@@ -195,27 +213,33 @@ export type ALL_PRODUCTS_QUERYResult = Array<{
   price: number | null;
   thcPercent: number | null;
   cbdPercent: number | null;
+  quantity: null;
   description: string | null;
   effects: Array<string> | null;
-  media: Array<{
-    _type: "file";
-    _key: string;
-    alt: null;
-    caption: string | null;
-    url: string | null;
-    mimeType: string | null;
-  } | {
-    _type: "image";
-    _key: string;
-    alt: string | null;
-    caption: null;
-    url: string | null;
-    mimeType: string | null;
-  }> | null;
+  media: Array<
+    | {
+        _type: "file";
+        _key: string;
+        alt: null;
+        caption: string | null;
+        url: string | null;
+        mimeType: string | null;
+      }
+    | {
+        _type: "image";
+        _key: string;
+        alt: string | null;
+        caption: null;
+        url: string | null;
+        mimeType: string | null;
+      }
+  > | null;
 }>;
+
+// Source: src/sanity/lib/queries.ts
 // Variable: PRODUCT_BY_ID_QUERY
-// Query: *[_type == "product" && _id == $id][0] {    _id,    _type,    name,    strainType,    price,    thcPercent,    cbdPercent,    description,    effects,    "media": media[] {      _type,      _key,      alt,      caption,      "url": asset->url,      "mimeType": asset->mimeType    }  }
-export type PRODUCT_BY_ID_QUERYResult = {
+// Query: *[_type == "product" && _id == $id][0] {    _id,    _type,    name,    strainType,    price,    thcPercent,    cbdPercent,    quantity,    description,    effects,    "media": media[] {      _type,      _key,      alt,      caption,      "url": asset->url,      "mimeType": asset->mimeType    }  }
+export type PRODUCT_BY_ID_QUERY_RESULT = {
   _id: string;
   _type: "product";
   name: string | null;
@@ -223,27 +247,33 @@ export type PRODUCT_BY_ID_QUERYResult = {
   price: number | null;
   thcPercent: number | null;
   cbdPercent: number | null;
+  quantity: null;
   description: string | null;
   effects: Array<string> | null;
-  media: Array<{
-    _type: "file";
-    _key: string;
-    alt: null;
-    caption: string | null;
-    url: string | null;
-    mimeType: string | null;
-  } | {
-    _type: "image";
-    _key: string;
-    alt: string | null;
-    caption: null;
-    url: string | null;
-    mimeType: string | null;
-  }> | null;
+  media: Array<
+    | {
+        _type: "file";
+        _key: string;
+        alt: null;
+        caption: string | null;
+        url: string | null;
+        mimeType: string | null;
+      }
+    | {
+        _type: "image";
+        _key: string;
+        alt: string | null;
+        caption: null;
+        url: string | null;
+        mimeType: string | null;
+      }
+  > | null;
 } | null;
+
+// Source: src/sanity/lib/queries.ts
 // Variable: PRODUCTS_BY_STRAIN_QUERY
 // Query: *[_type == "product" && strainType == $strainType] | order(name asc) {    _id,    name,    strainType,    price,    thcPercent,    cbdPercent,    "primaryImage": media[_type == "image"][0] {      alt,      "url": asset->url    }  }
-export type PRODUCTS_BY_STRAIN_QUERYResult = Array<{
+export type PRODUCTS_BY_STRAIN_QUERY_RESULT = Array<{
   _id: string;
   name: string | null;
   strainType: "hybrid" | "indica" | "sativa" | null;
@@ -255,9 +285,11 @@ export type PRODUCTS_BY_STRAIN_QUERYResult = Array<{
     url: string | null;
   } | null;
 }>;
+
+// Source: src/sanity/lib/queries.ts
 // Variable: ALL_SITE_USERS_QUERY
 // Query: *[_type == "siteUser"] | order(_createdAt desc) {    _id,    email,    name,    status,    _createdAt  }
-export type ALL_SITE_USERS_QUERYResult = Array<{
+export type ALL_SITE_USERS_QUERY_RESULT = Array<{
   _id: string;
   email: string | null;
   name: string | null;
@@ -269,9 +301,9 @@ export type ALL_SITE_USERS_QUERYResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "\n  *[_type == \"product\"] | order(name asc) {\n    _id,\n    _type,\n    name,\n    strainType,\n    price,\n    thcPercent,\n    cbdPercent,\n    description,\n    effects,\n    \"media\": media[] {\n      _type,\n      _key,\n      alt,\n      caption,\n      \"url\": asset->url,\n      \"mimeType\": asset->mimeType\n    }\n  }\n": ALL_PRODUCTS_QUERYResult;
-    "\n  *[_type == \"product\" && _id == $id][0] {\n    _id,\n    _type,\n    name,\n    strainType,\n    price,\n    thcPercent,\n    cbdPercent,\n    description,\n    effects,\n    \"media\": media[] {\n      _type,\n      _key,\n      alt,\n      caption,\n      \"url\": asset->url,\n      \"mimeType\": asset->mimeType\n    }\n  }\n": PRODUCT_BY_ID_QUERYResult;
-    "\n  *[_type == \"product\" && strainType == $strainType] | order(name asc) {\n    _id,\n    name,\n    strainType,\n    price,\n    thcPercent,\n    cbdPercent,\n    \"primaryImage\": media[_type == \"image\"][0] {\n      alt,\n      \"url\": asset->url\n    }\n  }\n": PRODUCTS_BY_STRAIN_QUERYResult;
-    "\n  *[_type == \"siteUser\"] | order(_createdAt desc) {\n    _id,\n    email,\n    name,\n    status,\n    _createdAt\n  }\n": ALL_SITE_USERS_QUERYResult;
+    '\n  *[_type == "product"] | order(name asc) {\n    _id,\n    _type,\n    name,\n    strainType,\n    price,\n    thcPercent,\n    cbdPercent,\n    quantity,\n    description,\n    effects,\n    "media": media[] {\n      _type,\n      _key,\n      alt,\n      caption,\n      "url": asset->url,\n      "mimeType": asset->mimeType\n    }\n  }\n': ALL_PRODUCTS_QUERY_RESULT;
+    '\n  *[_type == "product" && _id == $id][0] {\n    _id,\n    _type,\n    name,\n    strainType,\n    price,\n    thcPercent,\n    cbdPercent,\n    quantity,\n    description,\n    effects,\n    "media": media[] {\n      _type,\n      _key,\n      alt,\n      caption,\n      "url": asset->url,\n      "mimeType": asset->mimeType\n    }\n  }\n': PRODUCT_BY_ID_QUERY_RESULT;
+    '\n  *[_type == "product" && strainType == $strainType] | order(name asc) {\n    _id,\n    name,\n    strainType,\n    price,\n    thcPercent,\n    cbdPercent,\n    "primaryImage": media[_type == "image"][0] {\n      alt,\n      "url": asset->url\n    }\n  }\n': PRODUCTS_BY_STRAIN_QUERY_RESULT;
+    '\n  *[_type == "siteUser"] | order(_createdAt desc) {\n    _id,\n    email,\n    name,\n    status,\n    _createdAt\n  }\n': ALL_SITE_USERS_QUERY_RESULT;
   }
 }
